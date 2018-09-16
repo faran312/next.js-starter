@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-test",
-  "version": "1.0.0",
-  "description": "First time use next js",
+  "name": "nextjs-starter",
+  "version": "1.1.0",
+  "description": "NextJS starter project",
   "main": "index.js",
   "author": "Muhamad Farid Ramadhan",
   "license": "MIT",
