@@ -1,11 +1,10 @@
-import Link from 'next/link';
-import { DatePicker } from 'antd';
+import React from 'react';
 import '../styles/index.scss';
+import Header from '../components/header';
 
 export default () => (
-    <div className="welcome">
-        Welcome to next.js!<br />
-        Click <Link href="/fetchdata">here</Link> to check the fetch data<br />
-        <DatePicker />
-    </div>
-)
+  <Header />
+//   <div className="welcome">
+//         Welcome to next.js!
+//   </div>
+);
