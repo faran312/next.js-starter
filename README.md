@@ -1,5 +1,5 @@
-# NextJS + Material UI Starter
-Project Starter, for NextJS (Server Side Rendering) with Material-UI Support
+# NextJS + Material UI + MongoDB Starter
+Project Starter, for NextJS (Server Side Rendering) with Material-UI Support, With support for create custom self API.
 
 ## How to use
 clone this repo, and rename config.template.js with config.js
