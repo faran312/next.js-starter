@@ -3,8 +3,9 @@ const express = require('express');
 const server = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const glob = require('glob');
+const path = require('path');
 const next = require('next');
+const enrouten = require('express-enrouten');
 const config = require('../config');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -33,9 +34,9 @@ app.prepare().then(() => {
   db.on('error', console.error.bind(console, 'connection error:')); // eslint-disable-line no-console
 
   // API routes
-  const rootPath = require('path').normalize(`${__dirname}/..`);
-  glob.sync(`${rootPath}/server/routes/*.js`)
-    .forEach(controllerPath => require(controllerPath)(server)); // eslint-disable-line import/no-dynamic-require
+  server.use(enrouten({
+    directory: path.join(__dirname, 'routes')
+  }));
 
   // Next.js request handling
   const customRequestHandler = (page, req, res) => {
