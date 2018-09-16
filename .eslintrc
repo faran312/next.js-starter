@@ -1,20 +1,107 @@
 {
   "env": {
+    "node": true,
     "browser": true,
     "es6": true,
-    "commonjs": true
+    "jest": true
   },
-  "extends": "airbnb",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
-    },
-    "sourceType": "module"
-  },
-  "plugins": ["react"],
+  "parser": "babel-eslint",
   "rules": {
-    "react/prop-types": 0,
-    "react/jsx-uses-vars": [2]
-  }
+    "react/forbid-prop-types": 2,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "no-extra-boolean-cast": 0,
+    "no-underscore-dangle": [
+      0,
+      {
+        "allowAfterThis": true
+      }
+    ],
+    "react/no-array-index-key": [
+      "disabled"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreComments": true
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/no-named-as-default": "off",
+    "import/prefer-default-export": "off",
+    "indent": "off",
+    "indent-legacy": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "prefer-destructuring": 1,
+    "global-require": 0,
+    "no-else-return": 0,
+    "react/require-default-props": 0,
+    "react/no-string-refs": 0,
+    "react/jsx-max-props-per-line": [2, { "maximum": 2, "when": "multiline" }],
+    "no-unused-vars": ["error", { "args": "none" }],
+    "key-spacing": ["error", { "mode": "minimum" }],
+    "arrow-body-style": [
+      0,
+      "as-needed", { "requireReturnForObjectLiteral": true }
+    ],
+    "comma-dangle": ["error", "never"],
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "ignoreRefs": true,
+        "allowArrowFunctions": false,
+        "allowBind": false
+      }
+    ],
+    "react/jsx-wrap-multilines": 0,
+    "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+    "padded-blocks": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
+    "jsx-a11y/label-has-for": [ 2, {
+      "required": {
+          "every": [ "id" ]
+      }
+    }],
+    "function-paren-newline": ["error", "consistent"]
+  },
+  "overrides": [
+    {
+      "files": [ "app/i18n/locales/*.js" ],
+      "rules": {
+        "max-len": [0, {}]
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js"
+        ]
+      }
+    }
+  },
+  "extends": "airbnb"
 }
